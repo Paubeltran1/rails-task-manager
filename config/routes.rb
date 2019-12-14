@@ -4,15 +4,15 @@ Rails.application.routes.draw do
   # lire tous les tasks
   get 'tasks', to: 'tasks#index'
 
-  # lire un task
-  get 'tasks/:id', to: 'tasks#show'
-
   # creer un task
   get 'tasks/new', to: 'tasks#new'
   post 'tasks', to: 'tasks#create'
 
+  # lire un task
+  get 'tasks/:id', to: 'tasks#show', as: :task
+
   # updater un restaurant
-  get 'tasks/:id/edit', to: 'tasks#edit'
+  get 'tasks/:id/edit', to: 'tasks#edit', as: :edit_task
   patch 'tasks/:id', to: 'tasks#update'
 
   # supprimer un task
